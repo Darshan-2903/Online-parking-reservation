@@ -1,0 +1,26 @@
+.slots1{
+    margin:100px 100px;
+}
+.slot {
+    width: 75px;
+    height: 40px;
+    margin: 5px;
+    padding: 20px 20px;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.slot.selected {
+    background-color: #FF5733; /* Color for selected seats */
+    color: #fff;
+}
+
+.slot.booked {
+    background-color: #999; /* Color for already booked seats */
+    cursor: not-allowed;
+}
