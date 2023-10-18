@@ -69,12 +69,36 @@ app.post("/Home", (req, res) => {
   });
 
   app.get('/Home/Slots', (req, res) => {
-    db.query('SELECT slots, pstatus FROM parkstatus', (err, results) => {
+    db.query('SELECT * FROM parkstatus', (err, results) => {
       if (err) {
         console.error('Error fetching seat data:', err);
         res.status(500).json({ error: 'Failed to fetch seat data' });
       } else {
         res.json(results);
+      }
+    });
+  });
+
+  app.post("/Home/Slots", (req, res) => {
+    const sql =
+      "INSERT INTO parkstatus(slot,Vechileno,startTime,endTime) VALUES (?, ?, ?, ?)";
+    
+    
+    const values = [
+      req.body.selectedSlot, 
+      req.body.Vechile_no,
+      req.body.arr,  
+      req.body.dep,  
+    ];
+    
+  
+    db.query(sql, values, (err, data) => {
+      if (err) {
+        console.error("Error inserting data into the database: " + err);
+        res.status(500).json({ error: "Internal server error" });
+      } else {
+        console.log("Data inserted successfully");
+        res.json(data);
       }
     });
   });

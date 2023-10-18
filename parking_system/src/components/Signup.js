@@ -38,7 +38,12 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div
+    data-aos="fade-down"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out">
       <div id="login-form-wrap">
         <h2>Register</h2>
         <form id="login-form" action="" onSubmit={handleSubmit}>

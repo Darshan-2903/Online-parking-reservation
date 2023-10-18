@@ -1,7 +1,7 @@
 .slots1{
     margin:100px 100px;
 }
-.slot {
+/* .slot {
     width: 75px;
     height: 40px;
     margin: 5px;
@@ -13,14 +13,66 @@
     text-align: center;
     line-height: 40px;
     cursor: pointer;
-}
+} */
+.slot {
+    position: relative;
+    width: 75px;
+    height: 40px;
+    margin: 5px;
+    padding: 20px 20px;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+
 
 .slot.selected {
     background-color: #FF5733; /* Color for selected seats */
     color: #fff;
 }
 
+.remaining-time-box {
+    position: absolute;
+    top:50%; /* Adjust to center the remaining time vertically within the slot */
+    left: 50%; /* Adjust to center the remaining time horizontally within the slot */
+    transform: translate(-50%, -50%); /* Center the remaining time within the slot */
+    /* background-color: #333; */
+    line-height: 20px;
+    color: #fff;
+    font-size: 15px;
+  }
 .slot.booked {
     background-color: #999; /* Color for already booked seats */
     cursor: not-allowed;
+}
+.bookedButton{
+    margin-left: 280px;
+    padding: 20px 20px;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(107, 107, 181);
+    color: white;
+    border-radius: 5px;
+    border: 2px solid rgb(107, 107, 181);
+    font-size: large;
+    line-height: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .slots1 {
+        margin: 10px; /* Further reduced margin for smaller mobile screens */
+    }
+
+    .slot {
+        width: 40px;
+        height: 60px; /* Further reduced width for smaller screens */
+        padding: 5px; /* Further reduced padding for smaller screens */
+        font-size: 12px; /* Reduce font size for better fit */
+        line-height: 60px; /* Adjust line height for smaller screens */
+    }
 }

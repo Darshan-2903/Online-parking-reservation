@@ -2,8 +2,6 @@ const checkdetails = (values) => {
     let errors = {};
     const date = new Date();
     const hrs = date.getHours();
-    console.log(values.Date)
-    console.log(date)
     if (!values.Date || values.Date < date) {
         errors.Date = 'Invalid Date';
     }
@@ -25,7 +23,7 @@ const checkdetails = (values) => {
     } else {
         errors.dTime = ' ';
     }
-
+    
     return errors;
 };
 

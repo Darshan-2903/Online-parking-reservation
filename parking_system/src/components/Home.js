@@ -23,11 +23,16 @@ const Home = () => {
   const handleSubmit=(event)=>{
     event.preventDefault();
     setErrors(checkdetails(values));
+    // console.log(errors);
     if(errors.Date===' ' && errors.aTime===' ' && errors.dTime===' '){
       axios
         .post("http://localhost:8081/Home", values)
         .then((res) => {
-          navigate("/Home/Slots");
+          navigate("/Home/Slots",{state:{
+            arrTime:values.aTime,
+            depTime:values.dTime,
+          },
+          });
           console.log(res);
         })
         .catch((err) => console.log(err));
@@ -36,7 +41,12 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div
+    data-aos="zoom-in-up"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out">
       <form className="parking_form" onSubmit={handleSubmit}>
         <div>
           <label>Enter Date</label>
