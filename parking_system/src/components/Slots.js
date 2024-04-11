@@ -10,6 +10,7 @@ const Slots = () => {
   const location = useLocation();
   const arr = location.state.arrTime;
   const dep = location.state.depTime;
+  const vecno = location.state.Vechileno;
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [bookedSlots, setBookedSlots] = useState([]);
   const [slotData, setSlotData] = useState(null);
@@ -39,7 +40,7 @@ const Slots = () => {
     
     const data = {
       selectedSlot: selectedSlot,
-      Vechile_no: 'MH05RT4567',
+      Vechile_no: vecno,
       arr: arr,
       dep: dep,
     };
