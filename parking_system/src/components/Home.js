@@ -31,6 +31,7 @@ const Home = () => {
           navigate("/Home/Slots",{state:{
             arrTime:values.aTime,
             depTime:values.dTime,
+            Vechileno:values.Vechile_no
           },
           });
           console.log(res);

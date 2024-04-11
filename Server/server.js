@@ -7,11 +7,19 @@ app.use(cors());
 app.use(express.json());
 
 const db=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'Darshan@29',
-    database:'ParkingSystem'
+    host:'parkdatabase.cry8gswoinym.us-east-1.rds.amazonaws.com',
+    user:'admin',
+    password:'Darshan29',
+    database: 'ParkingSystem',
+    port:'3306'
 })
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+  } else {
+    console.log('Connected to MySQL database!');
+  }
+});
 
 app.post('/signup',(req,res)=>{
     const sql ='INSERT INTO USER(`Fname`,`Email`,`Upassword`) VALUES (?)';
