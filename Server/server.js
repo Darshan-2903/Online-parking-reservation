@@ -3,6 +3,7 @@ const mysql=require('mysql');
 const cors =require('cors');
 const path=require("path");
 const app = express();
+const PORT=8080;
 
 app.use(cors());
 app.use(express.json());
@@ -122,6 +123,6 @@ app.post("/Home", (req, res) => {
   });
   
 
-app.listen(8081,()=>{
-    console.log('listening ',8081);
+app.listen(PORT,()=>{
+    console.log('listening ',PORT);
 })
