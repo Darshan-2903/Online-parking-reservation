@@ -29,6 +29,10 @@ const Login = ({ isAuthenticated, setIsAuthenticated }) => {
           if (res.data === "Success") {
             setIsAuthenticated(true);
             navigate("/Home");
+          }
+          else if(res.data === "Admin"){
+            setIsAuthenticated(true);
+            navigate("/Admin");
           } else {
             alert("No record exist");
           }

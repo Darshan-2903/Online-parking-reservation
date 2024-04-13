@@ -1,17 +1,23 @@
 const express=require('express');
 const mysql=require('mysql');
 const cors =require('cors');
-
+const path=require("path");
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
+const _dirname=path.dirname("");
+const buildpath = path.join(_dirname,"../parking_system/build");
+app.use(express.static(buildpath));
+
+
+let PORT=process.env.PORT || 8081;
 const db=mysql.createConnection({
-    host:'parkdatabase.cry8gswoinym.us-east-1.rds.amazonaws.com',
-    user:'admin',
-    password:'Darshan29',
+    host:'localhost',
+    user:'root',
+    password:'Darshan@29',
     database: 'ParkingSystem',
-    port:'3306'
 })
 db.connect((err) => {
   if (err) {
@@ -41,6 +47,10 @@ app.post('/login',(req,res)=>{
     db.query(sql,[req.body.email,req.body.password],(err,data)=>{
         if(err){
             return res.json('Error');
+        }
+        else if(req.body.email=='darshan.mahajan@gmail.com' && req.body.password=='Darshan@29')
+        {
+            return res.json('Admin');
         }
         if(data.length>0){
             return res.json("Success");
@@ -112,6 +122,6 @@ app.post("/Home", (req, res) => {
   });
   
 
-app.listen(8081,()=>{
-    console.log('listening');
+app.listen(PORT,()=>{
+    console.log('listening ',PORT);
 })
