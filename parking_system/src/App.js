@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Home from './components/Home';
 import Slots from './components/Slots';
 import Confirmed from './components/Confirmed';
+import Admin from './components/Admin';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
       <Route path='/' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
         <Route path='/signup' element={<Signup/>}></Route>
+        <Route path='/Admin' element={<Admin/>}></Route>
         {isAuthenticated ? (
           <Route path='/Home' element={<Home />} />
         ) : (
