@@ -12,7 +12,7 @@ const buildpath = path.join(_dirname,"../parking_system/build");
 app.use(express.static(buildpath));
 
 
-let PORT=process.env.PORT || 8081;
+// let PORT=process.env.PORT || 8081;
 const db=mysql.createConnection({
     host:'localhost',
     user:'root',
@@ -122,6 +122,6 @@ app.post("/Home", (req, res) => {
   });
   
 
-app.listen(PORT,()=>{
-    console.log('listening ',PORT);
+app.listen(8081,()=>{
+    console.log('listening ',8081);
 })
