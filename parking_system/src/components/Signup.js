@@ -4,6 +4,7 @@ import { signupValidation } from "./LoginValidation";
 import axios from "axios";
 import  '../styles/signup.css'
 
+
 const Signup = () => {
   const [values, setValues] = useState({
     username: "",
@@ -28,7 +29,7 @@ const Signup = () => {
       errors.password === ""
     ) {
       axios
-        .post("http://localhost:8082/signup", values)
+        .post("/signup", values)
         .then((res) => {
           navigate("/");
           console.log(res);

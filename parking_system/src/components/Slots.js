@@ -49,7 +49,7 @@ const Slots = () => {
     };
 
     axios
-      .post('http://localhost:8082/Home/Slots', data)
+      .post('/Home/Slots', data)
       .then((res) => {
         navigate('/Home/Slots/Confirmation');
         console.log(res);
