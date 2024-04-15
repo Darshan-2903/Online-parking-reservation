@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require("path");
 
 const app = express();
-const PORT = 8082;
+const PORT = process.env.PORT || 8082;
 
 app.use(cors());
 app.use(express.json());
