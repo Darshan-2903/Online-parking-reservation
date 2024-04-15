@@ -28,7 +28,7 @@ const Signup = () => {
       errors.password === ""
     ) {
       axios
-        .post("http://localhost:8081/signup", values)
+        .post("http://localhost:8082/signup", values)
         .then((res) => {
           navigate("/");
           console.log(res);
