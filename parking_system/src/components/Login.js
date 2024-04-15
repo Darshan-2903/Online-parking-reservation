@@ -30,7 +30,7 @@ const Login = ({ isAuthenticated, setIsAuthenticated }) => {
     if (!Object.values(validationErrors).some(error => error)) {
       // No validation errors, proceed with login
       axios
-        .post("http://localhost:8082/login", values)
+        .post("/login", values)
         .then((res) => {
           if (res.data === "Success") {
             setIsAuthenticated(true);

@@ -26,7 +26,7 @@ const Home = () => {
     // console.log(errors);
     if(errors.Date===' ' && errors.aTime===' ' && errors.dTime===' '){
       axios
-        .post("http://localhost:8082/Home", values)
+        .post("/Home", values)
         .then((res) => {
           navigate("/Home/Slots",{state:{
             arrTime:values.aTime,
