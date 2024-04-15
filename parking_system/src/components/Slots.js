@@ -22,7 +22,7 @@ const Slots = () => {
 
   const fetchSlotData = async () => {
     try {
-      const response = await axios.get('http://localhost:8082/Home/Slots');
+      const response = await axios.get('/Home/Slots');
       setSlotData(response.data);
       console.log(slotData);
     } catch (error) {
